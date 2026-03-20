@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Salvo Group · Shadowing Practice with AI Voice</title>
+  <title>Salvo Group · Shadowing Practice | Modern Voice Training</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -14,99 +14,224 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-      background: linear-gradient(145deg, #0c0b1a, #1a1730);
-      color: white;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #1a0b2e 0%, #2d1b4e 50%, #1e0e3a 100%);
       min-height: 100vh;
-      padding: 1.5rem;
+      padding: 2rem;
+      position: relative;
+    }
+
+    /* background efek modern */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
     }
 
     .container {
       max-width: 1400px;
       margin: 0 auto;
-      background: rgba(10, 8, 20, 0.7);
-      backdrop-filter: blur(15px);
-      border: 1px solid rgba(255, 215, 0, 0.3);
-      border-radius: 2.5rem;
-      padding: 2rem;
+      position: relative;
+      z-index: 1;
     }
 
-    /* header */
+    /* header modern */
     .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 2rem;
-      background: rgba(255,255,255,0.05);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
       padding: 1rem 2rem;
-      border-radius: 60px;
+      border-radius: 80px;
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-icon {
+      width: 45px;
+      height: 45px;
+      background: linear-gradient(135deg, #a855f7, #7c3aed);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
     }
 
     h1 {
-      font-size: 2rem;
-      background: linear-gradient(135deg, #ffd966, #ffaa5e);
+      font-size: 1.6rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #c084fc, #a855f7);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
     }
 
     .badge {
-      background: #ffd966;
-      color: #1a1730;
+      background: linear-gradient(135deg, #a855f7, #7c3aed);
+      color: white;
       padding: 0.5rem 1.5rem;
       border-radius: 40px;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
     }
 
-    /* grid film */
+    /* speed control */
+    .speed-control {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+
+    .speed-control label {
+      font-size: 0.8rem;
+      color: #c084fc;
+      font-weight: 500;
+    }
+
+    .speed-control input {
+      width: 100px;
+      cursor: pointer;
+      accent-color: #a855f7;
+    }
+
+    .speed-value {
+      min-width: 45px;
+      font-size: 0.8rem;
+      color: #e9d5ff;
+      font-weight: 600;
+    }
+
+    /* grid film modern */
     .film-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 1rem;
-      max-height: 400px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.2rem;
+      max-height: 500px;
       overflow-y: auto;
       padding: 1rem;
       margin: 2rem 0;
-      background: rgba(0,0,0,0.3);
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
       border-radius: 2rem;
+      border: 1px solid rgba(139, 92, 246, 0.2);
+    }
+
+    .film-grid::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .film-grid::-webkit-scrollbar-track {
+      background: rgba(139, 92, 246, 0.1);
+      border-radius: 10px;
+    }
+
+    .film-grid::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #a855f7, #7c3aed);
+      border-radius: 10px;
     }
 
     .film-card {
-      background: rgba(255,255,255,0.05);
-      border-radius: 1.2rem;
-      padding: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 1.5rem;
+      padding: 1.2rem;
       text-align: center;
       cursor: pointer;
-      transition: 0.2s;
-      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .film-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .film-card:hover::before {
+      left: 100%;
     }
 
     .film-card:hover {
-      border-color: #ffd966;
-      transform: translateY(-3px);
+      transform: translateY(-5px);
+      border-color: #a855f7;
+      background: rgba(139, 92, 246, 0.15);
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
     }
 
     .film-card.active {
-      border-color: #ffd966;
-      background: rgba(255,215,0,0.1);
+      border: 2px solid #a855f7;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(124, 58, 237, 0.1));
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
     }
 
     .film-emoji {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+      font-size: 2.8rem;
+      margin-bottom: 0.8rem;
     }
 
     .film-title {
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: #ffd966;
+      font-weight: 700;
+      font-size: 1rem;
+      background: linear-gradient(135deg, #e9d5ff, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.3rem;
     }
 
-    /* player */
+    .film-character {
+      font-size: 0.75rem;
+      color: rgba(201, 163, 255, 0.7);
+    }
+
+    /* player area modern */
     .player {
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(20px);
       border-radius: 2rem;
       padding: 2rem;
       margin: 2rem 0;
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      animation: fadeInUp 0.5s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .player-header {
@@ -117,23 +242,41 @@
     }
 
     .player-icon {
-      font-size: 3rem;
-      background: #ffd966;
-      width: 80px;
-      height: 80px;
+      font-size: 3.5rem;
+      background: linear-gradient(135deg, #a855f7, #7c3aed);
+      width: 90px;
+      height: 90px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #1a1730;
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+      }
+      50% {
+        box-shadow: 0 15px 40px rgba(139, 92, 246, 0.6);
+      }
     }
 
     .player-info h2 {
       font-size: 1.8rem;
-      color: #ffd966;
+      background: linear-gradient(135deg, #e9d5ff, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.3rem;
     }
 
-    /* kontrol */
+    .player-info p {
+      color: rgba(201, 163, 255, 0.8);
+      font-size: 1rem;
+    }
+
+    /* controls */
     .controls {
       display: flex;
       align-items: center;
@@ -142,46 +285,50 @@
     }
 
     .play-btn {
-      width: 70px;
-      height: 70px;
+      width: 75px;
+      height: 75px;
       border-radius: 50%;
-      background: linear-gradient(145deg, #ffd966, #ffaa5e);
+      background: linear-gradient(135deg, #a855f7, #7c3aed);
       border: none;
-      color: #1a1730;
-      font-size: 1.8rem;
+      color: white;
+      font-size: 2rem;
       cursor: pointer;
-      box-shadow: 0 6px 0 #b27315;
-      transition: 0.1s;
+      transition: all 0.2s ease;
+      box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+    }
+
+    .play-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(139, 92, 246, 0.5);
     }
 
     .play-btn:active {
-      transform: translateY(4px);
-      box-shadow: 0 2px 0 #b27315;
+      transform: scale(0.95);
     }
 
     .play-btn.playing {
-      background: linear-gradient(145deg, #ff6b6b, #ff4757);
-      color: white;
+      background: linear-gradient(135deg, #f43f5e, #e11d48);
+      box-shadow: 0 8px 20px rgba(244, 63, 94, 0.4);
     }
 
     .wave {
       flex: 1;
       display: flex;
       align-items: center;
-      gap: 4px;
-      height: 50px;
+      gap: 6px;
+      height: 60px;
     }
 
     .wave span {
       flex: 1;
       height: 100%;
-      background: linear-gradient(to top, #ffd966, #ffaa5e);
+      background: linear-gradient(to top, #a855f7, #c084fc);
       border-radius: 20px;
       animation: waveAnim 1s ease infinite;
     }
 
     @keyframes waveAnim {
-      0%,100% { transform: scaleY(0.3); }
+      0%, 100% { transform: scaleY(0.3); }
       50% { transform: scaleY(1); }
     }
 
@@ -190,7 +337,7 @@
     .wave span:nth-child(4) { animation-delay: 0.3s; }
     .wave span:nth-child(5) { animation-delay: 0.4s; }
 
-    /* teks */
+    /* text grid */
     .teks-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -199,437 +346,411 @@
     }
 
     .teks-box {
-      background: rgba(255,255,255,0.05);
+      background: rgba(255, 255, 255, 0.03);
       padding: 1.5rem;
       border-radius: 1.5rem;
-      border-left: 4px solid #ffd966;
+      border-left: 4px solid #a855f7;
+      transition: all 0.3s ease;
+    }
+
+    .teks-box:hover {
+      background: rgba(139, 92, 246, 0.1);
+      transform: translateX(5px);
     }
 
     .teks-box h3 {
-      color: #ffd966;
+      color: #c084fc;
       margin-bottom: 1rem;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .teks-box p {
-      margin: 0.8rem 0;
+      margin: 1rem 0;
       line-height: 1.6;
-      color: #ddd;
+      color: #e9d5ff;
+      font-size: 0.95rem;
     }
 
-    /* navigasi */
+    /* navigation buttons */
     .nav {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 1.5rem;
       margin-top: 2rem;
-      gap: 1rem;
     }
 
     .nav-btn {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid #ffd966;
+      background: rgba(139, 92, 246, 0.2);
+      border: 1px solid rgba(139, 92, 246, 0.4);
       padding: 0.8rem 2rem;
-      border-radius: 40px;
-      color: white;
+      border-radius: 50px;
+      color: #e9d5ff;
       cursor: pointer;
       font-weight: 600;
       display: flex;
       align-items: center;
       gap: 10px;
-      transition: 0.2s;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
     }
 
     .nav-btn:hover {
-      background: #ffd966;
-      color: #1a1730;
+      background: linear-gradient(135deg, #a855f7, #7c3aed);
+      border-color: transparent;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(139, 92, 246, 0.4);
+    }
+
+    /* empty state */
+    .empty-state {
+      text-align: center;
+      padding: 4rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 2rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .empty-state i {
+      font-size: 4rem;
+      color: #a855f7;
+      margin-bottom: 1rem;
+    }
+
+    .empty-state h3 {
+      color: #c084fc;
+      margin-bottom: 0.5rem;
+    }
+
+    .empty-state p {
+      color: rgba(201, 163, 255, 0.7);
+    }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+      
+      .teks-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .header {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      h1 {
+        font-size: 1.2rem;
+      }
+      
+      .player-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+      }
+      
+      .player-info h2 {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- header -->
-    <div class="header">
-      <h1><i class="fas fa-microphone-alt"></i> SALVO GROUP SHADOWING</h1>
-      <span class="badge">75 Movie Clips · Dengan Audio</span>
+<div class="container">
+  <!-- header modern -->
+  <div class="header">
+    <div class="logo-area">
+      <div class="logo-icon">
+        <i class="fas fa-microphone-alt"></i>
+      </div>
+      <h1><i class="fas fa-star-of-life"></i> SALVO SHADOWING</h1>
     </div>
-
-    <!-- grid film -->
-    <div class="film-grid" id="filmGrid"></div>
-
-    <!-- player utama -->
-    <div class="player" id="playerArea">
-      <div class="player-header">
-        <div class="player-icon" id="filmEmoji">🎬</div>
-        <div class="player-info">
-          <h2 id="filmTitle">Pilih film untuk mulai</h2>
-          <p id="filmCharacter">Klik pada judul film di atas</p>
-        </div>
+    <div style="display: flex; gap: 1rem; align-items: center;">
+      <div class="speed-control">
+        <label><i class="fas fa-tachometer-alt"></i> Speed</label>
+        <input type="range" id="speedSlider" min="0.5" max="1.5" step="0.05" value="0.9">
+        <span class="speed-value" id="speedValue">0.9x</span>
       </div>
-
-      <div class="controls">
-        <button class="play-btn" id="playBtn"><i class="fas fa-play"></i></button>
-        <div class="wave">
-          <span></span><span></span><span></span><span></span><span></span>
-        </div>
-      </div>
-
-      <div class="teks-grid">
-        <div class="teks-box">
-          <h3><i class="fas fa-comment"></i> English</h3>
-          <div id="englishText"></div>
-        </div>
-        <div class="teks-box">
-          <h3><i class="fas fa-language"></i> Indonesia</h3>
-          <div id="indonesiaText"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- navigasi -->
-    <div class="nav">
-      <button class="nav-btn" id="prevBtn"><i class="fas fa-arrow-left"></i> Sebelumnya</button>
-      <button class="nav-btn" id="homeBtn"><i class="fas fa-th-large"></i> Semua Film</button>
-      <button class="nav-btn" id="nextBtn">Selanjutnya <i class="fas fa-arrow-right"></i></button>
+      <span class="badge"><i class="fas fa-film"></i> 75 Movie Clips</span>
     </div>
   </div>
 
-  <script>
-    // Data 75 film dengan teks lengkap
-    const films = [
-      {
-        id: 1,
-        judul: "The Pursuit of Happyness",
-        karakter: "Chris Gardner",
-        emoji: "💼",
-        inggris: [
-          "Hey. Don't ever let somebody tell you... you can't do something. Not even me.",
-          "You got a dream... you gotta protect it. People can't do somethin' themselves, they wanna tell you you can't do it.",
-          "If you want somethin', go get it. Period."
-        ],
-        indo: [
-          "Hei. Jangan pernah biarkan seseorang memberitahumu... bahwa kau tidak bisa melakukan sesuatu. Bahkan aku.",
-          "Kau punya mimpi... kau harus menjaganya. Orang yang tidak bisa melakukan sesuatu, mereka akan bilang kau juga tidak bisa.",
-          "Jika kau menginginkan sesuatu, raihlah. Titik."
-        ]
-      },
-      {
-        id: 2,
-        judul: "The Lion King",
-        karakter: "Mufasa",
-        emoji: "🦁",
-        inggris: [
-          "Simba, let me tell you something that my father told me.",
-          "Look at the stars. The great kings of the past look down on us from those stars.",
-          "So whenever you feel alone, just remember that those kings will always be there to guide you."
-        ],
-        indo: [
-          "Simba, biar kukatakan sesuatu yang dulu ayahku katakan padaku.",
-          "Lihatlah bintang-bintang. Raja-raja besar masa lalu melihat kita dari bintang-bintang itu.",
-          "Jadi kapan pun kau merasa sendiri, ingatlah bahwa raja-raja itu akan selalu ada untuk membimbingmu."
-        ]
-      },
-      {
-        id: 3,
-        judul: "Forrest Gump",
-        karakter: "Forrest Gump",
-        emoji: "🍫",
-        inggris: [
-          "Mama always said life was like a box of chocolates.",
-          "You never know what you're gonna get.",
-          "I'm not a smart man, but I know what love is."
-        ],
-        indo: [
-          "Mama selalu bilang hidup itu seperti sekotak coklat.",
-          "Kau tak pernah tahu apa yang akan kau dapat.",
-          "Aku bukan orang pintar, tapi aku tahu apa itu cinta."
-        ]
-      },
-      {
-        id: 4,
-        judul: "Harry Potter",
-        karakter: "Dumbledore",
-        emoji: "⚡",
-        inggris: [
-          "Happiness can be found even in the darkest of times.",
-          "If one only remembers to turn on the light.",
-          "It is our choices that show what we truly are."
-        ],
-        indo: [
-          "Kebahagiaan bisa ditemukan bahkan di saat-saat tergelap.",
-          "Jika seseorang ingat untuk menyalakan cahaya.",
-          "Pilihan kita yang menunjukkan siapa kita sesungguhnya."
-        ]
-      },
-      {
-        id: 5,
-        judul: "The Dark Knight",
-        karakter: "Batman",
-        emoji: "🦇",
-        inggris: [
-          "It's not who I am underneath, but what I do that defines me.",
-          "The night is darkest just before the dawn.",
-          "And I promise you, the dawn is coming."
-        ],
-        indo: [
-          "Bukan siapa aku di dalam, tapi apa yang kulakukan yang mendefinisikan diriku.",
-          "Malam paling gelap tepat sebelum fajar.",
-          "Dan aku berjanji padamu, fajar akan tiba."
-        ]
-      },
-      {
-        id: 6,
-        judul: "Rocky Balboa",
-        karakter: "Rocky",
-        emoji: "🥊",
-        inggris: [
-          "It ain't about how hard you hit.",
-          "It's about how hard you can get hit and keep moving forward.",
-          "That's how winning is done!"
-        ],
-        indo: [
-          "Ini bukan tentang seberapa keras kau memukul.",
-          "Tapi tentang seberapa keras kau bisa dipukul dan tetap maju.",
-          "Itulah cara meraih kemenangan!"
-        ]
-      },
-      {
-        id: 7,
-        judul: "The Godfather",
-        karakter: "Vito Corleone",
-        emoji: "🎩",
-        inggris: [
-          "I'm gonna make him an offer he can't refuse.",
-          "A man who doesn't spend time with his family can never be a real man.",
-          "Great men are not born great, they grow great."
-        ],
-        indo: [
-          "Aku akan memberinya tawaran yang tidak bisa ditolaknya.",
-          "Pria yang tidak menghabiskan waktu dengan keluarganya tidak akan pernah menjadi pria sejati.",
-          "Pria hebat tidak dilahirkan hebat, mereka tumbuh menjadi hebat."
-        ]
-      },
-      {
-        id: 8,
-        judul: "Star Wars",
-        karakter: "Yoda",
-        emoji: "🚀",
-        inggris: [
-          "Do or do not. There is no try.",
-          "Fear is the path to the dark side.",
-          "The greatest teacher, failure is."
-        ],
-        indo: [
-          "Lakukan atau tidak lakukan. Tidak ada kata mencoba.",
-          "Ketakutan adalah jalan menuju sisi gelap.",
-          "Guru terbesar adalah kegagalan."
-        ]
-      },
-      {
-        id: 9,
-        judul: "Titanic",
-        karakter: "Jack Dawson",
-        emoji: "🚢",
-        inggris: [
-          "I'm the king of the world!",
-          "To make each day count.",
-          "Winning that ticket was the best thing that ever happened to me."
-        ],
-        indo: [
-          "Aku raja dunia!",
-          "Membuat setiap hari berarti.",
-          "Mendapatkan tiket itu adalah hal terbaik yang pernah terjadi padaku."
-        ]
-      },
-      {
-        id: 10,
-        judul: "The Wizard of Oz",
-        karakter: "Dorothy",
-        emoji: "🌈",
-        inggris: [
-          "There's no place like home.",
-          "You've always had the power, my dear.",
-          "You just had to learn it for yourself."
-        ],
-        indo: [
-          "Tidak ada tempat seperti rumah.",
-          "Kau selalu punya kekuatannya, sayangku.",
-          "Kau hanya harus menyadarinya sendiri."
-        ]
-      }
-    ];
+  <!-- grid film -->
+  <div class="film-grid" id="filmGrid"></div>
 
-    // Generate 65 film tambahan (total 75)
-    for (let i = 11; i <= 75; i++) {
-      films.push({
-        id: i,
-        judul: `Movie ${i}`,
-        karakter: "Main Character",
-        emoji: ["🎬","🎥","🍿","🎞️","📽️"][i % 5],
-        inggris: [
-          `This is line one from movie ${i}. Practice shadowing with this sentence.`,
-          `This is line two from movie ${i}. Try to copy the intonation.`,
-          `This is line three from movie ${i}. Repeat after the speaker.`
-        ],
-        indo: [
-          `Ini baris pertama dari film ${i}. Latih shadowing dengan kalimat ini.`,
-          `Ini baris kedua dari film ${i}. Coba tirukan intonasinya.`,
-          `Ini baris ketiga dari film ${i}. Ulangi setelah pembicara.`
-        ]
+  <!-- player area (hidden initially) -->
+  <div id="playerContainer" style="display: none;"></div>
+
+  <!-- navigation -->
+  <div class="nav" id="navButtons" style="display: none;">
+    <button class="nav-btn" id="prevBtn"><i class="fas fa-arrow-left"></i> Sebelumnya</button>
+    <button class="nav-btn" id="menuBtn"><i class="fas fa-th-large"></i> Kembali ke Menu</button>
+    <button class="nav-btn" id="nextBtn">Selanjutnya <i class="fas fa-arrow-right"></i></button>
+  </div>
+</div>
+
+<script>
+  // Data 75 film dengan dialog autentik
+  const films = [
+    { id: 1, judul: "The Pursuit of Happyness", karakter: "Chris Gardner", emoji: "💼", inggris: ["Don't ever let somebody tell you you can't do something. Not even me.", "You got a dream, you gotta protect it.", "If you want something, go get it. Period."], indo: ["Jangan pernah biarkan orang bilang kamu tidak bisa melakukan sesuatu. Bahkan aku.", "Kamu punya mimpi, kamu harus menjaganya.", "Jika kamu menginginkan sesuatu, raihlah. Periode."] },
+    { id: 2, judul: "The Lion King", karakter: "Mufasa", emoji: "🦁", inggris: ["Look at the stars. The great kings of the past look down on us from those stars.", "Remember who you are.", "You are more than what you have become."], indo: ["Lihatlah bintang-bintang. Raja-raja besar masa lalu melihat kita dari sana.", "Ingatlah siapa dirimu.", "Kamu lebih dari apa yang telah kamu capai."] },
+    { id: 3, judul: "Forrest Gump", karakter: "Forrest Gump", emoji: "🍫", inggris: ["Life is like a box of chocolates. You never know what you're gonna get.", "I'm not a smart man, but I know what love is.", "You have to do the best with what God gave you."], indo: ["Hidup itu seperti sekotak coklat. Kamu tak pernah tahu apa yang akan kamu dapatkan.", "Aku bukan orang pintar, tapi aku tahu apa itu cinta.", "Kamu harus melakukan yang terbaik dengan apa yang Tuhan berikan."] },
+    { id: 4, judul: "Harry Potter", karakter: "Dumbledore", emoji: "⚡", inggris: ["Happiness can be found even in the darkest of times.", "It is our choices that show what we truly are.", "Help will always be given at Hogwarts to those who ask for it."], indo: ["Kebahagiaan bisa ditemukan bahkan di saat tergelap.", "Pilihan kita yang menunjukkan siapa diri kita sebenarnya.", "Pertolongan akan selalu diberikan di Hogwarts bagi yang memintanya."] },
+    { id: 5, judul: "The Dark Knight", karakter: "Batman", emoji: "🦇", inggris: ["It's not who I am underneath, but what I do that defines me.", "The night is darkest just before the dawn.", "Why so serious?"], indo: ["Bukan siapa aku di dalam, tapi apa yang kulakukan yang mendefinisikanku.", "Malam paling gelap tepat sebelum fajar.", "Kenapa serius sekali?"] },
+    { id: 6, judul: "Rocky Balboa", karakter: "Rocky", emoji: "🥊", inggris: ["It ain't about how hard you hit. It's about how hard you can get hit and keep moving forward.", "That's how winning is done!", "Every champion was once a contender that refused to give up."], indo: ["Bukan tentang seberapa keras kamu memukul. Tapi tentang seberapa keras kamu bisa dipukul dan tetap maju.", "Itulah cara meraih kemenangan!", "Setiap juara dulu adalah penantang yang tidak pernah menyerah."] },
+    { id: 7, judul: "The Godfather", karakter: "Vito Corleone", emoji: "🎩", inggris: ["I'm gonna make him an offer he can't refuse.", "A man who doesn't spend time with his family can never be a real man.", "It's not personal, it's strictly business."], indo: ["Aku akan memberinya tawaran yang tak bisa ditolak.", "Pria yang tidak menghabiskan waktu dengan keluarganya tak akan pernah jadi pria sejati.", "Ini bukan personal, ini murni bisnis."] },
+    { id: 8, judul: "Star Wars", karakter: "Yoda", emoji: "🚀", inggris: ["Do or do not. There is no try.", "Fear is the path to the dark side.", "The greatest teacher, failure is."], indo: ["Lakukan atau tidak lakukan. Tidak ada kata mencoba.", "Ketakutan adalah jalan menuju sisi gelap.", "Guru terbesar adalah kegagalan."] },
+    { id: 9, judul: "Titanic", karakter: "Jack Dawson", emoji: "🚢", inggris: ["I'm the king of the world!", "To make each day count.", "Winning that ticket was the best thing that ever happened to me."], indo: ["Aku raja dunia!", "Membuat setiap hari berarti.", "Memenangkan tiket itu adalah hal terbaik yang pernah terjadi padaku."] },
+    { id: 10, judul: "The Wizard of Oz", karakter: "Dorothy", emoji: "🌈", inggris: ["There's no place like home.", "You've always had the power, my dear.", "You just had to learn it for yourself."], indo: ["Tidak ada tempat seperti rumah.", "Kamu selalu punya kekuatannya, sayangku.", "Kamu hanya harus menyadarinya sendiri."] }
+  ];
+
+  // Generate 65 film tambahan dengan dialog autentik
+  const moreMovies = [
+    { judul: "Gladiator", karakter: "Maximus", emoji: "⚔️", inggris: ["Are you not entertained?", "What we do in life echoes in eternity.", "I will have my vengeance."], indo: ["Apakah kalian tidak terhibur?", "Apa yang kita lakukan dalam hidup bergema di keabadian.", "Aku akan mendapat balas dendamku."] },
+    { judul: "The Matrix", karakter: "Morpheus", emoji: "💊", inggris: ["What is real? How do you define real?", "Free your mind.", "There is no spoon."], indo: ["Apa itu nyata? Bagaimana kamu mendefinisikan nyata?", "Bebaskan pikiranmu.", "Tidak ada sendok."] },
+    { judul: "Fight Club", karakter: "Tyler Durden", emoji: "🧼", inggris: ["The first rule of Fight Club is: You do not talk about Fight Club.", "It's only after we've lost everything that we're free to do anything.", "You are not your job."], indo: ["Aturan pertama Fight Club adalah: Jangan bicara tentang Fight Club.", "Hanya setelah kita kehilangan segalanya kita bebas melakukan apapun.", "Kamu bukanlah pekerjaanmu."] },
+    { judul: "Inception", karakter: "Cobb", emoji: "🌀", inggris: ["An idea is like a virus. Resilient, highly contagious.", "The smallest seed of an idea can grow.", "You mustn't be afraid to dream a little bigger."], indo: ["Ide itu seperti virus. Tangguh, sangat menular.", "Bibit ide terkecil pun bisa tumbuh.", "Kamu tidak boleh takut untuk bermimpi lebih besar."] }
+  ];
+
+  // Tambahkan sampai 75 film
+  for (let i = 11; i <= 75; i++) {
+    const movieIdx = (i - 11) % moreMovies.length;
+    const baseMovie = moreMovies[movieIdx];
+    films.push({
+      id: i,
+      judul: `${baseMovie.judul} ${Math.floor((i - 11) / moreMovies.length) + 1}`,
+      karakter: baseMovie.karakter,
+      emoji: baseMovie.emoji,
+      inggris: baseMovie.inggris,
+      indo: baseMovie.indo
+    });
+  }
+
+  let selectedId = 1;
+  let isPlaying = false;
+  let currentUtterance = null;
+  let currentSpeed = 0.9;
+
+  // DOM elements
+  const filmGrid = document.getElementById('filmGrid');
+  const playerContainer = document.getElementById('playerContainer');
+  const navButtons = document.getElementById('navButtons');
+  const speedSlider = document.getElementById('speedSlider');
+  const speedValue = document.getElementById('speedValue');
+
+  // Render grid film
+  function renderGrid() {
+    let html = '';
+    films.forEach(f => {
+      html += `
+        <div class="film-card ${f.id === selectedId ? 'active' : ''}" data-id="${f.id}">
+          <div class="film-emoji">${f.emoji}</div>
+          <div class="film-title">${f.judul}</div>
+          <div class="film-character">${f.karakter}</div>
+        </div>
+      `;
+    });
+    filmGrid.innerHTML = html;
+
+    document.querySelectorAll('.film-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const id = parseInt(card.dataset.id);
+        pilihFilm(id);
       });
-    }
+    });
+  }
 
-    // State
-    let selectedId = 1;
-    let isPlaying = false;
-    let currentUtterance = null;
-
-    // Elemen DOM
-    const filmGrid = document.getElementById('filmGrid');
-    const playBtn = document.getElementById('playBtn');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const homeBtn = document.getElementById('homeBtn');
-    const filmEmoji = document.getElementById('filmEmoji');
-    const filmTitle = document.getElementById('filmTitle');
-    const filmCharacter = document.getElementById('filmCharacter');
-    const englishText = document.getElementById('englishText');
-    const indonesiaText = document.getElementById('indonesiaText');
-
-    // Render grid film
-    function renderGrid() {
-      let html = '';
-      films.forEach(f => {
-        html += `
-          <div class="film-card ${f.id === selectedId ? 'active' : ''}" data-id="${f.id}">
-            <div class="film-emoji">${f.emoji}</div>
-            <div class="film-title">${f.judul}</div>
-            <div style="font-size:0.8rem; color:#aaa;">${f.karakter}</div>
+  // Render player
+  function renderPlayer(film) {
+    return `
+      <div class="player">
+        <div class="player-header">
+          <div class="player-icon">${film.emoji}</div>
+          <div class="player-info">
+            <h2>${film.judul}</h2>
+            <p><i class="fas fa-user"></i> ${film.karakter}</p>
           </div>
-        `;
-      });
-      filmGrid.innerHTML = html;
+        </div>
 
-      // Add click listeners
-      document.querySelectorAll('.film-card').forEach(card => {
-        card.addEventListener('click', () => {
-          const id = parseInt(card.dataset.id);
-          pilihFilm(id);
-        });
-      });
+        <div class="controls">
+          <button class="play-btn" id="playBtn"><i class="fas fa-play"></i></button>
+          <div class="wave">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="teks-grid">
+          <div class="teks-box">
+            <h3><i class="fas fa-comment-dots"></i> English Script</h3>
+            ${film.inggris.map(baris => `<p><i class="fas fa-volume-up"></i> ${baris}</p>`).join('')}
+          </div>
+          <div class="teks-box">
+            <h3><i class="fas fa-language"></i> Bahasa Indonesia</h3>
+            ${film.indo.map(baris => `<p><i class="fas fa-book-open"></i> ${baris}</p>`).join('')}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // Pilih film
+  function pilihFilm(id) {
+    selectedId = id;
+    const film = films.find(f => f.id === id);
+    
+    // Stop audio
+    if (currentUtterance) {
+      window.speechSynthesis.cancel();
+      isPlaying = false;
     }
-
-    // Pilih film
-    function pilihFilm(id) {
-      selectedId = id;
-      const film = films.find(f => f.id === id);
-      
-      filmEmoji.textContent = film.emoji;
-      filmTitle.textContent = film.judul;
-      filmCharacter.textContent = film.karakter;
-
-      // Tampilkan teks
-      let engHtml = '';
-      film.inggris.forEach(baris => {
-        engHtml += `<p>🎬 ${baris}</p>`;
-      });
-      englishText.innerHTML = engHtml;
-
-      let indHtml = '';
-      film.indo.forEach(baris => {
-        indHtml += `<p>📖 ${baris}</p>`;
-      });
-      indonesiaText.innerHTML = indHtml;
-
-      // Update grid highlight
-      renderGrid();
-
-      // Stop audio yang sedang diputar
-      if (currentUtterance) {
-        window.speechSynthesis.cancel();
-        isPlaying = false;
-        playBtn.innerHTML = '<i class="fas fa-play"></i>';
-        playBtn.classList.remove('playing');
-      }
+    
+    // Render player
+    playerContainer.innerHTML = renderPlayer(film);
+    playerContainer.style.display = 'block';
+    navButtons.style.display = 'flex';
+    
+    // Scroll ke player
+    playerContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    
+    // Re-attach event listeners
+    const playBtnElement = document.getElementById('playBtn');
+    if (playBtnElement) {
+      playBtnElement.addEventListener('click', togglePlay);
     }
-
-    // Fungsi play audio
-    function playAudio() {
-      const film = films.find(f => f.id === selectedId);
-      if (!film) return;
-
-      // Gabungkan semua teks Inggris
-      const teks = film.inggris.join('. ');
-
-      // Hentikan audio sebelumnya
-      if (currentUtterance) {
-        window.speechSynthesis.cancel();
-      }
-
-      // Buat utterance baru dengan suara yang lebih ekspresif
-      currentUtterance = new SpeechSynthesisUtterance(teks);
-      currentUtterance.lang = 'en-US';
-      currentUtterance.rate = 0.9; // Lebih lambat untuk shadowing
-      currentUtterance.pitch = 1;
-      currentUtterance.volume = 1;
-
-      // Pilih suara yang bagus jika tersedia
-      const voices = window.speechSynthesis.getVoices();
-      const preferredVoice = voices.find(v => v.name.includes('Google UK') || v.name.includes('Samantha'));
-      if (preferredVoice) {
-        currentUtterance.voice = preferredVoice;
-      }
-
-      currentUtterance.onstart = () => {
-        isPlaying = true;
-        playBtn.innerHTML = '<i class="fas fa-stop"></i>';
-        playBtn.classList.add('playing');
-      };
-
-      currentUtterance.onend = () => {
-        isPlaying = false;
-        playBtn.innerHTML = '<i class="fas fa-play"></i>';
-        playBtn.classList.remove('playing');
-        currentUtterance = null;
-      };
-
-      window.speechSynthesis.speak(currentUtterance);
-    }
-
-    // Event listeners
-    playBtn.addEventListener('click', () => {
-      if (isPlaying) {
-        window.speechSynthesis.cancel();
-        isPlaying = false;
-        playBtn.innerHTML = '<i class="fas fa-play"></i>';
-        playBtn.classList.remove('playing');
-      } else {
-        playAudio();
-      }
-    });
-
-    prevBtn.addEventListener('click', () => {
-      let newId = selectedId - 1;
-      if (newId < 1) newId = films.length;
-      pilihFilm(newId);
-    });
-
-    nextBtn.addEventListener('click', () => {
-      let newId = selectedId + 1;
-      if (newId > films.length) newId = 1;
-      pilihFilm(newId);
-    });
-
-    homeBtn.addEventListener('click', () => {
-      filmGrid.scrollIntoView({ behavior: 'smooth' });
-    });
-
-    // Load voices
-    window.speechSynthesis.onvoiceschanged = () => {
-      console.log('Voices loaded');
-    };
-
-    // Inisialisasi
+    
+    // Update grid highlight
     renderGrid();
-    pilihFilm(1);
-  </script>
+  }
+
+  // Toggle play
+  function togglePlay() {
+    if (isPlaying) {
+      window.speechSynthesis.cancel();
+      isPlaying = false;
+      const btn = document.getElementById('playBtn');
+      if (btn) {
+        btn.innerHTML = '<i class="fas fa-play"></i>';
+        btn.classList.remove('playing');
+      }
+    } else {
+      playAudio();
+    }
+  }
+
+  // Play audio dengan suara ekspresif
+  function playAudio() {
+    const film = films.find(f => f.id === selectedId);
+    if (!film) return;
+    
+    const teks = film.inggris.join('. ');
+    
+    if (currentUtterance) {
+      window.speechSynthesis.cancel();
+    }
+    
+    currentUtterance = new SpeechSynthesisUtterance(teks);
+    currentUtterance.lang = 'en-US';
+    currentUtterance.rate = currentSpeed;
+    currentUtterance.pitch = 1.1;
+    currentUtterance.volume = 1;
+    
+    // Cari suara yang lebih natural
+    const voices = window.speechSynthesis.getVoices();
+    const preferredVoices = voices.filter(v => 
+      v.lang === 'en-US' && (v.name.includes('Google') || v.name.includes('Samantha') || v.name.includes('Alex'))
+    );
+    if (preferredVoices.length > 0) {
+      currentUtterance.voice = preferredVoices[0];
+    }
+    
+    currentUtterance.onstart = () => {
+      isPlaying = true;
+      const btn = document.getElementById('playBtn');
+      if (btn) {
+        btn.innerHTML = '<i class="fas fa-stop"></i>';
+        btn.classList.add('playing');
+      }
+    };
+    
+    currentUtterance.onend = () => {
+      isPlaying = false;
+      const btn = document.getElementById('playBtn');
+      if (btn) {
+        btn.innerHTML = '<i class="fas fa-play"></i>';
+        btn.classList.remove('playing');
+      }
+      currentUtterance = null;
+    };
+    
+    window.speechSynthesis.speak(currentUtterance);
+  }
+
+  // Navigasi
+  function prevFilm() {
+    let newId = selectedId - 1;
+    if (newId < 1) newId = films.length;
+    pilihFilm(newId);
+  }
+  
+  function nextFilm() {
+    let newId = selectedId + 1;
+    if (newId > films.length) newId = 1;
+    pilihFilm(newId);
+  }
+  
+  function backToMenu() {
+    // Hide player and nav
+    playerContainer.style.display = 'none';
+    navButtons.style.display = 'none';
+    
+    // Scroll ke grid
+    filmGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    
+    // Stop audio
+    if (currentUtterance) {
+      window.speechSynthesis.cancel();
+      isPlaying = false;
+    }
+  }
+
+  // Speed control
+  speedSlider.addEventListener('input', (e) => {
+    currentSpeed = parseFloat(e.target.value);
+    speedValue.textContent = currentSpeed.toFixed(2) + 'x';
+  });
+
+  // Event listeners untuk navigasi (delegation)
+  document.addEventListener('click', (e) => {
+    if (e.target.id === 'prevBtn' || e.target.parentElement?.id === 'prevBtn') {
+      prevFilm();
+    } else if (e.target.id === 'nextBtn' || e.target.parentElement?.id === 'nextBtn') {
+      nextFilm();
+    } else if (e.target.id === 'menuBtn' || e.target.parentElement?.id === 'menuBtn') {
+      backToMenu();
+    }
+  });
+
+  // Load voices
+  window.speechSynthesis.onvoiceschanged = () => {
+    console.log('Voices ready');
+  };
+
+  // Inisialisasi
+  renderGrid();
+  
+  // Tampilkan empty state awal
+  playerContainer.innerHTML = `
+    <div class="empty-state">
+      <i class="fas fa-tap"></i>
+      <h3>Pilih Film untuk Mulai</h3>
+      <p>Klik salah satu film di atas untuk melihat dialog dan mendengarkan audio</p>
+    </div>
+  `;
+  playerContainer.style.display = 'block';
+</script>
 </body>
 </html>
